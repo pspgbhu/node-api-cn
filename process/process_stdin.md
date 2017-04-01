@@ -1,11 +1,9 @@
 
 * {Stream}
 
-The `process.stdin` property returns a [Readable][] stream equivalent to or
-associated with `stdin` (fd `0`).
+`process.stdin` 属性返回一个等同于或关联到 `stdin` 的可写流 （[Readable][] stream）。
 
-For example:
-
+例如：
 ```js
 process.stdin.setEncoding('utf8');
 
@@ -21,11 +19,9 @@ process.stdin.on('end', () => {
 });
 ```
 
-As a [Readable][] stream, `process.stdin` can also be used in "old" mode that
-is compatible with scripts written for Node.js prior to v0.10.
-For more information see [Stream compatibility][].
+作为可写流，`process.stdin` 也同样可以在“旧”模式下使用与v0.10之前用Node.js编写的脚本兼容。
+更多信息请查阅 [Stream compatibility][].
 
-*Note*: In "old" streams mode the `stdin` stream is paused by default, so one
-must call `process.stdin.resume()` to read from it. Note also that calling
-`process.stdin.resume()` itself would switch stream to "old" mode.
+*注意*：在“旧”流模式下，“stdin”流默认暂停，所以必须调用`process.stdin.resume()`来读取。同时也请注意，调用`process.stdin.resume（）`将会使它本身回到“旧”流模式。
+
 
